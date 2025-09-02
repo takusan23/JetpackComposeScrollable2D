@@ -22,6 +22,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layout
@@ -60,6 +61,7 @@ private fun MainScreen() {
                 .fillMaxSize()
                 .padding(paddingValues)
 
+                .clipToBounds()
                 .scrollable2D(state = rememberScrollable2DState { delta ->
                     // maxOf でサイズに収める
                     // これをしないと見えないスクロール（スクロールしても UI がなかなか反映されない）が起きる
